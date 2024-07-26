@@ -98,7 +98,7 @@ def get_matchups(*types, get_coverage=False, inverse=False):
 
 
 while True:
-    types = input("What types do you want to find the weaknesses of?\nPlease separate them by spaces\n").capitalize().split(" ")
+    types = [i.capitalize() for i in input("What types do you want to find the weaknesses of?\nPlease separate them by spaces\n").split(" ")]
     matchups = get_matchups(*types)
     [print(f"{t}: {matchups[t]}") for t in matchups]
     input()
